@@ -1,6 +1,6 @@
 from aiogram import Bot, Dispatcher, executor, types
 from aiogram.dispatcher.filters import Text
-from src.get_best_move import get_best_move, cfg, re
+from get_best_move import get_best_move, cfg, re
 
 bot = Bot(token=cfg.TOKEN)
 dp = Dispatcher(bot)

@@ -4,7 +4,7 @@ import chess.engine
 import requests
 from aiogram import Bot, Dispatcher
 from chess.pgn import Game
-import src.config as cfg
+import config as cfg
 import re
 
 
