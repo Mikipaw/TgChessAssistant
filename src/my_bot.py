@@ -39,6 +39,9 @@ async def get_url_new_game(message: types.Message):
 
 @dp.message_handler(Text(contains='lichess.org'))
 async def get_move_new_game(message: types.Message):
+    """
+    This function finds the best move for user, when he wants to analyze position in new game.
+    """
     global current_url
     if not re.search(r'lichess.org/.*', message.text):
         print(message.text)
