@@ -56,11 +56,12 @@ async def get_move_new_game(message: types.Message):
 
     try:
         best_move = get_best_move(message.text)
-        await message.reply(f"{best_move}")
     except Exception as e:
         await message.reply("К сожалению, произошла ошибка при поиске лучшего хода. "
                             "Пожалуйста, попробуй еще раз.")
         print(e)
+    else:
+        await message.reply(f"{best_move}")
 
 
 @dp.message_handler(Text(equals='Текущая партия'))

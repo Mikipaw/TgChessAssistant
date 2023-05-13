@@ -20,7 +20,6 @@ def get_best_move(url):
     # Getting game id by url
     game_id = url.split("/")[-1]
     game_id = game_id[:8]
-    # print(game_id)
 
     # Getting PGN-data using API Lichess
     # https://lichess.org/game/export/ielMM7Ep?evals=0&clocks=0 - example of url
@@ -40,8 +39,6 @@ def get_best_move(url):
     for move in game.mainline_moves():
         board.push(chess.Move.from_uci(move.uci()))
 
-    # print(game.mainline())
-    # print(board)
     # Getting best move and current score on the board
     result = engine.analyse(board, chess.engine.Limit(time=cfg.TIME_FOR_THINKING))
     best_move = result["pv"][0].uci()
